@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Enter Your Bio{% endblock %}
+
+{% block content %}
+<div class="card-container mt-5">
+  <div class="bio-card">
+    <h2 class="mb-4 text-center">User Bio Generator</h2>
+    <form method="POST" action="{{ url_for('generate_card') }}">
+      <div class="mb-3">
+        <label class="form-label">Name:</label>
+        <input type="text" class="form-control" name="name" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Age:</label>
+        <input type="number" class="form-control" name="age" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Hobbies (comma-separated):</label>
+        <input type="text" class="form-control" name="hobbies" required placeholder="e.g., Reading, Swimming, Coding">
+      </div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Generate Bio Card</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
